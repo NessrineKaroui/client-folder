@@ -15,6 +15,8 @@ innso test
 In the navigator tape /h2-console to explore the saved data
 
 datasource.url=jdbc:h2:mem:client_service
+
 datasource.username=sa
+
 datasource.password=
 
