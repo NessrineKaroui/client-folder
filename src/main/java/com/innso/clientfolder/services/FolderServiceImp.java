@@ -29,7 +29,7 @@ public class FolderServiceImp implements FolderService {
     try {
       Folder createdFolder = folderRepository.save(FolderMapper.dtoToEntity(createFolderBody,messageRepository));
       return FolderMapper.entityToDto(createdFolder);
-    }catch (Exception e){
+    } catch (Exception e){
       throw  new ServieClientException(e.getMessage());
     }
   }
@@ -40,7 +40,7 @@ public class FolderServiceImp implements FolderService {
     try {
       Folder folder = folderRepository.findByClientName(createFolderBody.getClientName());
       folder.setReference(createFolderBody.getReference());
-    }catch (Exception e){
+    } catch (Exception e){
       throw  new ServieClientException(e.getMessage());
     }
   }
@@ -49,8 +49,7 @@ public class FolderServiceImp implements FolderService {
   public List<FolderDto> getFolders(GetFoldersBody getFoldersBody) throws ServieClientException {
     try {
       return FolderMapper.listEntityToDto(folderRepository.findAllByClientName(getFoldersBody.getClientName()));
-    }
-    catch (Exception e){
+    } catch (Exception e){
       throw new ServieClientException(e.getMessage());
     }
     }

@@ -52,8 +52,7 @@ public class ClientFolderController {
   public ResponseEntity<?> getFolders(@RequestBody GetFoldersBody getFoldersBody){
     try{
       return ResponseEntity.ok(folderService.getFolders(getFoldersBody));
-    }
-    catch (ServieClientException e){
+    } catch (ServieClientException e){
       e.fillInStackTrace();
       return ResponseEntity.internalServerError().body("Service unavailable");
     }
