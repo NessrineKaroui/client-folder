@@ -13,6 +13,7 @@ innso test
 5- you can tape /swagger-ui/index.html to test the api or use postman.
 
 In the navigator tape /h2-console to explore the saved data
+
 datasource.url=jdbc:h2:mem:client_service
 datasource.username=sa
 datasource.password=
