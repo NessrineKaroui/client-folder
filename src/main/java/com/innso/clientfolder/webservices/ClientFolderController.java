@@ -37,7 +37,7 @@ public class ClientFolderController {
     }
   }
 
-  @PutMapping("/update")
+  @PatchMapping("/update")
   @Operation(summary = "service de mise à jour des dossiers clients")
   public ResponseEntity<String> updateFolder(@RequestBody CreateFolderBody createFolderBody){
     try {
