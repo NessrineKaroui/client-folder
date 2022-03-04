@@ -2,6 +2,7 @@ package com.innso.clientfolder.webservices;
 
 import com.innso.clientfolder.mapper.MessageMapper;
 import com.innso.clientfolder.parameters.CreateFolderBody;
+import com.innso.clientfolder.parameters.GetFoldersBody;
 import com.innso.clientfolder.services.FolderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,9 +41,9 @@ class ClientFolderControllerTest {
 
     @Test
     void getFoldersTestOK() throws Exception {
-        CreateFolderBody createFolderBody = new CreateFolderBody("Jérémie Durand","");
+        GetFoldersBody getFolderBody = new GetFoldersBody("Jérémie Durand");
 
-        String requestBodyJson = MessageMapper.objectToJson(createFolderBody);
+        String requestBodyJson = MessageMapper.objectToJson(getFolderBody);
 
         RequestBuilder request = getRequestBuilder(MockMvcRequestBuilders.get("/folders/getFolders"), requestBodyJson);
 

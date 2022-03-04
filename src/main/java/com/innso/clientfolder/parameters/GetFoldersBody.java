@@ -1,19 +1,19 @@
 package com.innso.clientfolder.parameters;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class GetFoldersBody {
     private final String clientName;
-    private final String reference;
 
-    public GetFoldersBody(String clientName, String reference) {
+    @JsonCreator
+    public GetFoldersBody(@JsonProperty("clientName") String clientName) {
         this.clientName = clientName;
-        this.reference = reference;
+
     }
 
     public String getClientName() {
         return clientName;
     }
 
-    public String getReference() {
-        return reference;
-    }
 }
